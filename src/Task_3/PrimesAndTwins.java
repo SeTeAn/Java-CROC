@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class PrimesAndTwins {
     public static void main(String[] args) {
 
         // Создание объекта ввода числа из консоли
@@ -16,10 +16,20 @@ public class Main {
         // Ветвление возможных результатов
         if (is_prime(number)) {
             if (is_prime(number - 2)) {
-                System.out.printf("Number %d is a prime number, and is a also a twin number to prime number %d\n",
+                if (is_prime(number + 2)) {
+                    System.out.printf("Number %d is a prime number," +
+                            " and is also a twin number to prime numbers %d and %d", number, number - 2, number + 2);
+                }
+                else System.out.printf("Number %d is a prime number, and is a also a twin number to prime number %d",
                         number, number - 2);
-            } else System.out.printf("Number %d is a prime number", number);
-        } else System.out.printf("Number %d isn't a prime number", number);
+            }
+            else if (is_prime(number + 2)) {
+                System.out.printf("Number %d is a prime number, and is a also a twin number to prime number %d",
+                        number, number + 2);
+            }
+            else System.out.printf("Number %d is a prime number", number);
+        }
+        else System.out.printf("Number %d isn't a prime number", number);
     }
 
 
@@ -29,7 +39,7 @@ public class Main {
             return false;
         }
         int div = 2;
-        while ((div * div) < number) {
+        while (number >= (div * div)) {
             if (number % div == 0) {
                 return false;
             }

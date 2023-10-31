@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class SumOfArithmeticProgression {
     public static void main(String[] args) {
 
         // Создание объекта ввода числа из консоли
