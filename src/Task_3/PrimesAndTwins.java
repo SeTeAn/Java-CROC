@@ -17,19 +17,14 @@ public class PrimesAndTwins {
         if (is_prime(number)) {
             if (is_prime(number - 2)) {
                 if (is_prime(number + 2)) {
-                    System.out.printf("Number %d is a prime number," +
-                            " and is also a twin number to prime numbers %d and %d", number, number - 2, number + 2);
-                }
-                else System.out.printf("Number %d is a prime number, and is a also a twin number to prime number %d",
+                    System.out.printf("Number %d is a prime number, and is also a twin number to prime numbers %d and %d", number, number - 2, number + 2);
+                } else System.out.printf("Number %d is a prime number, and is a also a twin number to prime number %d",
                         number, number - 2);
-            }
-            else if (is_prime(number + 2)) {
+            } else if (is_prime(number + 2)) {
                 System.out.printf("Number %d is a prime number, and is a also a twin number to prime number %d",
                         number, number + 2);
-            }
-            else System.out.printf("Number %d is a prime number", number);
-        }
-        else System.out.printf("Number %d isn't a prime number", number);
+            } else System.out.printf("Number %d is a prime number", number);
+        } else System.out.printf("Number %d isn't a prime number", number);
     }
 
 
